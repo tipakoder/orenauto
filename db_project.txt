@@ -1,0 +1,49 @@
+[car]
+- id
+- mark
+- equipment (комплектация)
+- name
+- year
+
+[car_equipment]
+- id
+- engine_type (бензиновый, электрический, гибридный)
+- power (мощность)
+- transmission (механическая, автоматическая)
+- fuel_tank (объём топливного бака в литрах)
+- gears_count (кол-во передач)
+- drive_unit (привод)
+- volume (объём двигателя л)
+- fuel_grade (марка топлива)
+- max_speed
+- acceleration_time (время разгона сек)
+- fuel_consumption_city (расход топлива в городе л/100км)
+- fuel_consumption_mixed (расход топлива смешанный л/100км)
+- fuel_consumption_country (расход топлива за городом л/100км)
+- suspension_height (дорожный просвет мм)
+- suspension_front (передняя подвеска)
+- suspension_back (задняя подвеска)
+- wheel_size (размер колёс)
+- length (длина мм)
+- height (высота мм)
+- width (ширина мм)
+- wheelbase (колёсная база мм)
+- trunk_volume (объём багажника л)
+- curb_weight (снаряжённая масса кг)
+- full_mass (прлная масса кг)
+- seats_count (кол-во мест)
+- doors_count (кол-во дверей)
+- country_make (страна сборки)
+- price (стоймость)
+
+[car_views]
+- id
+- car_id
+- name
+- hex_color
+- image
+
+[car_album]
+- id
+- car_id
+- path
