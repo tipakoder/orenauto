@@ -1,0 +1,108 @@
+/* Brands list */
+
+#brands .list{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 20px;
+}
+
+#brands .list .item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 16px;
+    text-align: center;
+    background-color: #fff;
+    transition: 0.3s box-shadow;
+    box-shadow: 0px 3px 9px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+#brands .list .item:hover{
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.16);
+}
+
+#brands .list .item .brand-image{
+    max-width: 120px;
+}
+
+#brands .list .item .brand-name{
+    margin-top: 8px;
+    font-family: Montserrat-Medium;
+    font-size: 18px;
+}
+
+/* Selected brand */
+
+#selected-brand .list{
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 16px;
+}
+
+#selected-brand .list .item{
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#selected-brand .list .item .item-image{
+    position: relative;
+}
+
+#selected-brand .list .item .item-image .overlay{
+    position: absolute;
+    left: -25px;
+    top: -15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#selected-brand .list .item .item-image .overlay .tag{
+    background-color: #ffd600;
+    border-radius: 8px;
+    padding: 4px 8px;
+    color: #FFF;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+#selected-brand .list .item .item-image .overlay .tag.new{
+    background-color: #38da4b;
+}
+
+#selected-brand .list .item .information{
+    display: flex;
+    margin-bottom: 8px;
+}
+
+#selected-brand .list .item .information .information-title{
+    margin-right: auto;
+}
+
+#selected-brand .list .item .information .information-price{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#selected-brand .list .item .information .information-price .price-new{
+    color: #ffd600;
+    font-size: 18px;
+}
+
+#selected-brand .list .item .information .information-price .price-base{
+    color: #555;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+#selected-brand .list .item .actions .discond-button{
+    border-radius: 8px;
+    background-color: #000;
+    color: #FFF;
+    font-family: Montserrat-Medium;
+    padding: 8px;
+    width: 100%;
+}
