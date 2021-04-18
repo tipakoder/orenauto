@@ -1,0 +1,99 @@
+/* COMPONENTS */
+
+.db-table{
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 100%;
+}
+
+.db-table .row{
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.db-table .row .content:first-child{
+    border: 0;
+}
+
+.db-table .row.power{
+    border: 0;
+    background-color: transparent;
+}
+
+.db-table .row.power .content{
+    display: flex;
+    grid-gap: 16px;
+    justify-content: flex-end;
+}
+
+.db-table .row.power .st{
+    background-color: #ffd600;
+    border: 2px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.db-table .row.power .st:last-child{
+    border: 2px solid #555;
+}
+
+.db-table .row .content{
+    display: grid;
+    border-top: 1px solid #eee;
+}
+
+.db-table .row .content.add{
+    padding: 16px;
+}
+
+.db-table .row .st:last-child{
+    border: 0;
+}
+
+.db-table .row .st{
+    font-family: Montserrat-Medium;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 16px;
+    border-right: 1px solid #eee;
+}
+
+.db-table .row.header{
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+
+.db-table .row.header .st{
+    font-family: Montserrat-Bold;
+    font-weight: 400;
+    font-size: 22px;
+    border-color: #ddd;
+}
+
+/* DASHBOARD */
+
+#dashboard-menu .list{
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 32% 32% 32%;
+}
+
+#dashboard-menu .list .item .f-icon{
+    padding: 64px 32px;
+}
+
+#dashboard-menu .list .item .f-icon .mi-icons{
+    font-size: 100px;
+}
+
+/* DASHBOARD CATALOG */
+
+#popup-window .window[name="new_auto"]{
+    min-width: 50%;
+}
+
+#dashboard-catalog .db-table .row .content{
+    grid-template-columns: 5% 24% 24% 24% 23%;
+}
+
