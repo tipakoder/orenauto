@@ -1,9 +1,10 @@
 [car]
 - id
-- mark
+- mark (марка)
+- model (модель)
 - equipment (комплектация)
-- name
-- year
+- name (название)
+- year (год выпуска)
 
 [car_equipment]
 - id
@@ -39,11 +40,27 @@
 [car_views]
 - id
 - car_id
-- name
-- hex_color
-- image
+- name (отображаемое имя цвета)
+- hex_color (hex-код цвета)
+- image (картинка модельки)
 
 [car_album]
 - id
 - car_id
-- path
+- path (ссылка на медиа)
+
+[car_used]
+- id
+- mark (марка)
+- model (модель)
+- year (год выпуска)
+- modification (модификация)
+- body (кузов)
+- engine_volume (объём двигателя)
+- engine_power (мощность двигателя)
+- transition (КПП)
+- drive_unit (привод)
+- color (цвет)
+- mileage (пробег)
+- owners (кол-во владельцев)
+- fuel (топливо)

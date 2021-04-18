@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оренбург.Авто - Авто с пробегом</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/old_auto.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="img/full-logotype.png" alt="" class="header-logotype">
+
+            <div class="header-info">
+                <div class="item">
+                    <div class="f-icon">
+                        <div class="mi-icons">place</div>
+                    </div>
+                    <p class="text">г. Оренбург,<br>ул. Чкалова 11</p>
+                </div>
+
+                <div class="item">
+                    <div class="f-icon">
+                        <div class="mi-icons">search</div>
+                    </div>
+                    <p class="text">На карте</p>
+                </div>
+
+                <div class="item">
+                    <div class="f-icon">
+                        <div class="mi-icons">schedule</div>
+                    </div>
+                    <p class="text"><b>Ежедневно</b><br>с 08.30 до 17.00</p>
+                </div>
+
+                <div class="item">
+                    <div class="f-icon">
+                        <div class="mi-icons">phone_callback</div>
+                    </div>
+                    <p class="text"><b>8 (3532) 31-72-39</b><br>По России бесплатно</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="/">Новые авто</a></li>
+                <li><a href="">Авто с пробегом</a></li>
+                <li><a href="">Автокредит</a></li>
+                <li><a href="">Trade-in</a></li>
+                <li><a href="">Акции</a></li>
+                <li><a href="">Отзывы</a></li>
+                <li><a href="">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="oldauto-view">
+            <div class="container">
+                <div class="album slider">
+                    <div class="view-slide" style="background-image: url('img/oldcars/kalina_1.jpg');"></div>
+                    <div class="slides">
+                        <div class="slide" style="background-image: url('img/oldcars/kalina_1.jpg');"></div>
+                        <div class="slide" style="background-image: url('img/oldcars/granta_1.jpg');"></div>
+                        <div class="slide" style="background-image: url('img/oldcars/granta_2.jpg');"></div>
+                        <div class="slide" style="background-image: url('img/oldcars/granta_3.jpg');"></div>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <h2 class="product-name">Lada Kalina <span class="selection">2013</span></h2>
+                    <p class="product-price">190 000 руб.</p>
+
+                    <h2 class="request-buy-title">Оформите заявку на кредит и получите скидку</h2>
+
+                    <div class="request-buy">
+                        <div class="field">
+                            <label for="">Приобретаемый автомобиль</label>
+                            <input type="text" value="Lada Kalina 2013, 190 000 Р" readonly>
+                        </div>
+
+                        <div class="field">
+                            <label for="">Первый взнос</label>
+                            <div class="field-change">
+                                <input id="range_price" type="text" value="0 руб." readonly>
+                                <input for="range_price" type="range" value="0" min="0" step="1900" max="133000">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="">Укажите Ваше ФИО</label>
+                            <input type="text" placeholder="ФИО">
+                        </div>
+
+                        <div class="field">
+                            <label for="">Контактный номер</label>
+                            <input type="tel" placeholder="Телефон 7(___)___-__-__" pattern="+7 ([0-9]{3}([0-9]{3})([0-9]{2})([0-9]{2})">
+                        </div>
+                    </div>
+
+                    <button class="request-send">Отправить заявку</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-brand">
+                <img src="img/full-logotype_white.png" alt="" class="footer-logotype">
+            </div>
+
+            <div class="footer-nav">
+                <h3 class="footer-title">Навигация</h3>
+                <div class="nav-tabs">
+                    <a class="tab" href="/">Новые авто</a>
+                    <a class="tab" href="#">Авто с пробегом</a>
+                    <a class="tab" href="#">Автокредит</a>
+                    <a class="tab" href="#">Trade-in</a>
+                    <a class="tab" href="#">Акции</a>
+                    <a class="tab" href="#">Отзывы</a>
+                    <a class="tab" href="#">Контакты</a>
+                </div>
+            </div>
+
+            <div class="footer-contacts">
+                <h3 class="footer-title">Контакты</h3>
+                <ul>
+                    <li>
+                        <span class="main-text">8 (3532) 31-72-39</span>
+                        <span class="sub-text">По России бесплатно</span>
+                    </li>
+
+                    <li>
+                        <span class="main-text">г. Оренбург, Чкалова 11</span>
+                        <span class="sub-text link">Смотреть на карте</span>
+                    </li>
+
+                    <li>
+                        <span class="main-text">Ежедневно</span>
+                        <span class="sub-text">с 08.30 до 17.00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

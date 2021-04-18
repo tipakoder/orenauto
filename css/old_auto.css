@@ -1,0 +1,144 @@
+/* SEARCHBAR */
+
+#sort-oldauto{
+    padding-bottom: 32px;
+}
+
+#sort-oldauto .search-bar{
+    margin-top: 32px;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 24% 24% 24% 24%;
+    align-items: center;
+}
+
+#sort-oldauto .additional-filters{
+    margin-top: 16px;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 19% 19% 19% 19% 19%;
+    align-items: center;
+
+    transform: scaleY(0%);
+    transition: 0.5s transform;
+}
+
+#sort-oldauto .search-bar .option label, 
+#sort-oldauto .additional-filters .option label{
+    margin-bottom: 8px;
+    display: block;
+}
+
+#sort-oldauto .search-bar .option select,
+#sort-oldauto .additional-filters .option select{
+    width: 100%;
+}
+
+#sort-oldauto .search-bar .option .content,
+#sort-oldauto .additional-filters .option .content{
+    display: flex;
+    align-items: center;
+}
+
+#sort-oldauto .additional-filters.show{
+    transform: scaleY(100%);
+}
+
+/* SEARCH RESULT */
+
+#search-result{
+    padding: 32px;
+    background-color: #fff;
+}
+
+#search-result .search-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#search-result .search-content{
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-gap: 16px;
+}
+
+#search-result .search-content .card{
+    cursor: pointer;
+}
+
+/* OLDAUTO VIEW */
+
+#oldauto-view > .container{
+    display: flex;
+    align-items: flex-start;
+}
+
+#oldauto-view .album{
+    width: 45%;
+    margin-right: 32px;
+}
+
+#oldauto-view .album .slides{
+    grid-gap: 8px;
+    margin-top: 8px;
+}
+
+#oldauto-view .album .slides .slide{
+    min-height: 100px;
+}
+
+#oldauto-view .information{
+    width: 50%;
+}
+
+#oldauto-view .information .product-name{
+    font-size: 34px;
+    font-family: Montserrat-Medium;
+}
+
+#oldauto-view .information .product-name .selection{
+    font-family: Montserrat-Bold;
+    color: #555;
+}
+
+#oldauto-view .information .product-price{
+    font-size: 28px;
+    font-family: Montserrat-Medium;
+    color: #deb900;
+}
+
+#oldauto-view .information .request-buy-title{
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+#oldauto-view .information .request-buy{
+    
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 50% 50%;
+}
+
+#oldauto-view .information .request-buy .field{
+    display: flex;
+    flex-direction: column;
+}
+
+#oldauto-view .information .request-buy .field label{
+    margin-bottom: 8px;
+    font-family: Montserrat-Medium;
+}
+
+#oldauto-view .information .request-send{
+    background-color: #E3A504;
+    color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: right;
+    margin-top: 16px;
+    cursor: pointer;
+    font-family: Montserrat-Medium;
+    font-size: 18px;
+}

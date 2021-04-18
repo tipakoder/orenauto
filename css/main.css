@@ -8,12 +8,19 @@
 }
 
 body{
-    background-color: #fcfcfc;
+    background-color: #f4f9fd;
 }
 
 a{
     color: inherit;
     text-decoration: none;
+}
+
+img{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 .f-icon{
@@ -24,6 +31,7 @@ a{
 
 .container{
     max-width: 1280px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -86,7 +94,7 @@ nav ul a{
     transition: 0.25s background-color, 0.3s color;
 }
 
-nav ul a:hover{
+nav ul a:hover, nav ul a.selected{
     background-color: #000;
     color: #FFF;
 }
@@ -95,14 +103,16 @@ nav ul a:hover{
 
 section{
     display: flex;
-    padding: 64px 16px 16px 16px;
+    padding: 64px 16px 32px 16px;
     flex-direction: column;
 }
 
-section > .section-title{
-    font-family: Montserrat-Medium;
+section .section-title{
+    font-family: Montserrat-Bold;
+    font-size: 28px;
+    font-weight: 400;
     margin-bottom: 32px;
-    text-align: center;
+    text-align: left;
     color: #131313;
 }
 
@@ -161,6 +171,10 @@ footer .footer-nav .nav-tabs{
     grid-gap: 8px;
 }
 
+footer .footer-nav .nav-tabs .tab.selected{
+    color: #deb900;
+}
+
 footer .footer-contacts ul{
     list-style: none;
 }
@@ -178,4 +192,141 @@ footer .footer-contacts ul li .main-text{
 footer .footer-contacts ul li .link{
     text-decoration: underline;
     cursor: pointer;
+}
+
+/* SELECT */
+
+select{
+    padding: 16px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+
+/* INPUT */
+
+input{
+    padding: 16px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+
+/* CARD */
+
+.card{
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.16);
+    border-radius: 0px 0px 8px 8px;
+    background-color: #fff;
+    display: inline-block;
+}
+
+.card .card-img{
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+}
+
+.card .card-img img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+}
+
+.card .card-body .card-main{
+    padding: 16px;
+}
+
+.card .card-body .card-main .title{
+    font-family: Montserrat-Medium;
+    font-size: 22px;
+}
+
+.card .card-body .card-main .sub-text{
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+}
+
+.card .card-body .card-main .add-text{
+    margin-top: 16px;
+    color: #666;
+}
+
+.card .card-body .card-main .sub-text.selection{
+    color: #deb900;
+    margin-top: 8px;
+}
+
+.card .card-body .card-main .mini-text.selection{
+    font-family: Montserrat-Bold;
+    font-size: 14px;
+    color: #0490d9;
+    margin-bottom: 8px;
+}
+
+.card .card-body .card-footer{
+    border-top: 1px solid #eee;
+    color: #666;
+    padding: 16px;
+}
+
+/* SLIDER */
+
+.slider{
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.16);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 16px;
+}
+
+.slider .view-slide{
+    min-height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+.slider .slides{
+    margin-top: 16px;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 24% 24% 24% 24%;
+}
+
+.slider .slides .slide{
+    min-height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    transition: 0.3s border;
+}
+
+.slider .slides .slide.selected{
+    border: 2px solid #555;
+}
+
+/* FIELD RANGE */
+
+.field-change{
+    position: relative;
+}
+
+.field-change > input[type="text"]{
+    width: 100%;
+}
+
+.field-change > input[type="range"]{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
