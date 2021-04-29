@@ -96,5 +96,13 @@ return [
         "controller" => "admin",
         "function" => "model_add",
         "level_access" => 1
+    ],
+    
+    [
+        "url" => "/reviews/add/",
+        "method" => "post",
+        "controller" => "main",
+        "function" => "reviews_add",
+        "level_access" => 2
     ]
 ];

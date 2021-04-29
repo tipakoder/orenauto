@@ -221,15 +221,19 @@ label{
     font-size: 18px;
 }
 
-/* INPUT */
+/* INPUT AND TEXTAREA */
 
-input{
+input, textarea{
     padding: 16px;
     border-radius: 4px;
     background-color: #fff;
     border: 1px solid #eee;
     font-size: 18px;
     width: 100%;
+}
+
+textarea{
+    resize: none;
 }
 
 /* BUTTON */

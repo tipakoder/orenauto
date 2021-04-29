@@ -6,12 +6,6 @@ function ready(){
     try{initLinks();}catch{console.log("error_links")}
 }
 
-function mouseDown(e){
-    if(e.target.closest('.window') === null && document.getElementById("popup-window")?.style.display != "none"){
-        hidePopup();
-    }
-}
-
 function initNav(){
     let resultUrl = location.pathname;
     document.querySelector('nav a[href="'+resultUrl+'"]').classList.add("selected");
@@ -131,4 +125,3 @@ function formWrite(json, form_id, url){
 }
 
 document.addEventListener("DOMContentLoaded", ready);
-document.addEventListener("mousedown", mouseDown);

@@ -66,6 +66,16 @@ function model_add(){
     send_answer(["Unknown error upload"]);
 }
 
+// Country add
+
+function country_add(){
+    $name = verify_field("name", $_POST['name'], 2, 40);
+    if(dbExecute("INSERT INTO country_origin (name) VALUES ('{$name}')")){
+        send_answer(["id" => dbLastId()], true);
+    }
+    send_answer([]);
+}
+
 // Catalog functions
 
 function catalog_page(){
@@ -98,7 +108,7 @@ function catalog_add(){
     $suspension_height = $_POST['suspension_height'];
     $suspension_front = verify_field("suspension_front", $_POST['suspension_front'], 4, 60);
     $suspension_back = verify_field("suspension_back", $_POST['suspension_back'], 4, 60);
-    $wheel_size = verify_field("wheel_size", $_POST['wheel_size'], 2, 40);
+    $wheel_size = verify_field("wheel_size", $_POST['wheel_size'], 2, 80);
     $length = $_POST['length'];
     $height = $_POST['height'];
     $width = $_POST['width'];
@@ -110,6 +120,7 @@ function catalog_add(){
     $doors_count = $_POST['doors_count'];
     $country_origin_id = $_POST['country_origin_id'];
     $price = $_POST['price'];
+    $price_shop = $_POST['price_shop'];
 
     if(dbExecute("INSERT INTO car_equipment (
         engine_type, 
@@ -139,7 +150,8 @@ function catalog_add(){
         seats_count,
         doors_count,
         country_origin_id,
-        price
+        price,
+        price_shop
     ) VALUES (
         '{$engine_type}',
         '{$power}',
@@ -168,7 +180,8 @@ function catalog_add(){
         '{$seats_count}',
         '{$doors_count}',
         '{$country_origin_id}',
-        '{$price}'
+        '{$price}',
+        '{$price_shop}'
     )")){
         $equipment_id = dbLastId();
 
@@ -215,7 +228,7 @@ function catalog_update(){
     $suspension_height = $_POST['suspension_height'];
     $suspension_front = verify_field("suspension_front", $_POST['suspension_front'], 4, 60);
     $suspension_back = verify_field("suspension_back", $_POST['suspension_back'], 4, 60);
-    $wheel_size = verify_field("wheel_size", $_POST['wheel_size'], 2, 40);
+    $wheel_size = verify_field("wheel_size", $_POST['wheel_size'], 2, 80);
     $length = $_POST['length'];
     $height = $_POST['height'];
     $width = $_POST['width'];

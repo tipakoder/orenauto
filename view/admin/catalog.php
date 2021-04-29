@@ -29,23 +29,32 @@
         </form>
     </div>
 
+    <div class="window container" name="new_country">
+        <div class="title">Добавление страны производства</div>
+
+        <form action="/admin/country/add/" functionToDo="location.reload();">
+            <input type="text" placeholder="Название" name="name" required>
+            <button>Сохранить</button>
+        </form>
+    </div>
+
     <div class="window container" name="new_auto">
         <div class="title">Добавление нового автомобиля</div>
 
         <form id="catalog_add" action="/admin/catalog/add/" functionToDo="location.reload();">
             <input type="number" name="id" disabled style="display: none;">
 
-            <select name="mark_id" required>
+            <select name="mark_id" onchange="for(let model of document.getElementById('new_auto_model').children){if(model.getAttribute('for') == this.value){model.style.display = 'block';}else{model.style.display = 'none';}}" required>
                 <option value="null" selected disabled>Марка</option>
                 <?php foreach($MARKS as $mark): ?>
                     <option value="<?=$mark['id']?>"><?=$mark['name']?></option>
                 <?php endforeach; ?>
             </select>
 
-            <select name="model_id" required>
+            <select name="model_id" id="new_auto_model" required>
                 <option value="null" selected disabled>Модель</option>
                 <?php foreach($MODELS as $model): ?>
-                    <option value="<?=$model['id']?>"><?=$model['name']?></option>
+                    <option for="<?=$model['mark_id']?>" value="<?=$model['id']?>"><?=$model['name']?></option>
                 <?php endforeach; ?>
             </select>
 
@@ -94,9 +103,9 @@
 
             <input type="number" placeholder="Максимальная скорость (км/ч)" name="max_speed" required>
             <input type="number" placeholder="Время разгона (до 100 км/ч)" name="acceleration_time" required>
-            <input type="number" placeholder="Расход в городе (л/100км)" name="fuel_consumption_city" required>
-            <input type="number" placeholder="Расход смешанный (л/100км)" name="fuel_consumption_mixed" required>
-            <input type="number" placeholder="Расход загородом (л/100км)" name="fuel_consumption_country" required>
+            <input type="text" placeholder="Расход в городе (л/100км)" name="fuel_consumption_city" required>
+            <input type="text" placeholder="Расход смешанный (л/100км)" name="fuel_consumption_mixed" required>
+            <input type="text" placeholder="Расход загородом (л/100км)" name="fuel_consumption_country" required>
             <input type="number" placeholder="Дорожный просвет (мм)" name="suspension_height" required>
             <input type="text" placeholder="Передняя подвеска" name="suspension_front" required>
             <input type="text" placeholder="Задняя подвеска" name="suspension_back" required>
@@ -105,7 +114,7 @@
             <input type="number" placeholder="Высота (мм)" name="height" required>
             <input type="number" placeholder="Ширина (мм)" name="width" required>
             <input type="number" placeholder="Колёсная база (мм)" name="wheelbase" required>
-            <input type="number" placeholder="Объём багажника (л)" name="trunk_volume" required>
+            <input type="text" placeholder="Объём багажника (л)" name="trunk_volume" required>
             <input type="number" placeholder="Снаряжённая масса (кг)" name="curb_weight" required>
             <input type="number" placeholder="Полная масса (кг)" name="full_mass" required>
             <input type="number" placeholder="Кол-во мест" name="seats_count" required>
@@ -119,6 +128,7 @@
             </select>
 
             <input type="number" placeholder="Цена (руб)" name="price" required>
+            <input type="number" placeholder="Цена на рынке (руб)" name="price_shop" required>
             
             <button>Сохранить</button>
         </form>
@@ -133,6 +143,7 @@
                 <div class="content">
                     <div class="st" onclick="showPopup('new_mark')">Добавить марку</div>
                     <div class="st" onclick="showPopup('new_model')">Добавить модель</div>
+                    <div class="st" onclick="showPopup('new_country')">Добавить страну производства</div>
                     <div class="st" onclick="formWrite(null, 'catalog_add', '/admin/catalog/add/'); showPopup('new_auto');">Добавить автомобиль</div>
                 </div>
             </div>
