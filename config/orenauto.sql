@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 19 2021 г., 00:11
--- Версия сервера: 10.3.22-MariaDB
--- Версия PHP: 7.1.33
+-- Время создания: Апр 29 2021 г., 12:24
+-- Версия сервера: 10.3.13-MariaDB
+-- Версия PHP: 7.1.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -64,7 +65,9 @@ CREATE TABLE `account_session` (
 
 INSERT INTO `account_session` (`id`, `account_id`, `session_key`, `ip`, `closed`) VALUES
 (3, 1, '46a15b190afc825235518018c804ff9354146f7ad4434db42ae771e2fef43e05', '127.0.0.1', 0),
-(5, 1, '1fafd53df16e2e0a2fd933bd7b09a0962069834a7db37c0c834d33381150f9ed', '127.0.0.1', 0);
+(5, 1, '1fafd53df16e2e0a2fd933bd7b09a0962069834a7db37c0c834d33381150f9ed', '127.0.0.1', 0),
+(6, 1, 'db17ce9dfcecb8d1aa70127f9e1fbe5d77721f9d530c6e589696d8234092d30d', '127.0.0.1', 0),
+(7, 1, '7c126913cb5c5222b2144d7b1827ce3bb027c2608db2bd9a926e7e662f78fb80', '127.0.0.1', 0);
 
 -- --------------------------------------------------------
 
@@ -85,7 +88,9 @@ CREATE TABLE `car` (
 --
 
 INSERT INTO `car` (`id`, `mark_id`, `model_id`, `equipment_id`, `year`) VALUES
-(1, 2, 1, 1, 2021);
+(1, 2, 1, 1, 2021),
+(3, 1, 9, 4, 2021),
+(4, 3, 10, 5, 2021);
 
 -- --------------------------------------------------------
 
@@ -129,26 +134,29 @@ CREATE TABLE `car_equipment` (
   `suspension_height` int(11) NOT NULL,
   `suspension_front` varchar(60) NOT NULL,
   `suspension_back` varchar(60) NOT NULL,
-  `wheel_size` varchar(40) NOT NULL,
+  `wheel_size` varchar(80) NOT NULL,
   `length` int(11) NOT NULL,
   `height` int(11) NOT NULL,
   `width` int(11) NOT NULL,
   `wheelbase` int(11) NOT NULL,
-  `trunk_volume` int(11) NOT NULL,
+  `trunk_volume` varchar(60) NOT NULL,
   `curb_weight` int(11) NOT NULL,
   `full_mass` int(11) NOT NULL,
   `seats_count` int(11) NOT NULL,
   `doors_count` int(11) NOT NULL,
   `country_origin_id` int(11) NOT NULL,
-  `price` int(11) NOT NULL
+  `price` int(11) NOT NULL,
+  `price_shop` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `car_equipment`
 --
 
-INSERT INTO `car_equipment` (`id`, `engine_type`, `power`, `transmission`, `fuel_tank`, `gears_count`, `drive_unit`, `volume`, `fuel_grade_id`, `max_speed`, `acceleration_time`, `fuel_consumption_city`, `fuel_consumption_mixed`, `fuel_consumption_country`, `suspension_height`, `suspension_front`, `suspension_back`, `wheel_size`, `length`, `height`, `width`, `wheelbase`, `trunk_volume`, `curb_weight`, `full_mass`, `seats_count`, `doors_count`, `country_origin_id`, `price`) VALUES
-(1, 'patrol', 1.6, 'mechanic', 50, 6, 'front', 128, 2, 192, 12, 10, 8, 6, 150, 'независимая, пружинная', 'независимая, пружинная', '205/55/R16', 4310, 1447, 1800, 2650, 1291, 1232, 1800, 5, 5, 1, 974900);
+INSERT INTO `car_equipment` (`id`, `engine_type`, `power`, `transmission`, `fuel_tank`, `gears_count`, `drive_unit`, `volume`, `fuel_grade_id`, `max_speed`, `acceleration_time`, `fuel_consumption_city`, `fuel_consumption_mixed`, `fuel_consumption_country`, `suspension_height`, `suspension_front`, `suspension_back`, `wheel_size`, `length`, `height`, `width`, `wheelbase`, `trunk_volume`, `curb_weight`, `full_mass`, `seats_count`, `doors_count`, `country_origin_id`, `price`, `price_shop`) VALUES
+(1, 'patrol', 1.6, 'mechanic', 50, 6, 'front', 128, 2, 192, 12, 10, 8, 6, 150, 'независимая, пружинная', 'независимая, пружинная', '205/55/R16', 4310, 1447, 1800, 2650, '1291', 1232, 1800, 5, 5, 1, 974900, 1364900),
+(4, 'patrol', 1.6, 'mechanic', 50, 5, 'front', 87, 3, 172, 12, 10, 7, 6, 180, ' независимая, пружинная', 'полунезависимая, пружинная', '175 / 65 / R14 185 / 60 / R14 185 / 55 / R15', 4268, 1500, 1700, 2476, '520', 1075, 1560, 5, 4, 1, 319500, 530500),
+(5, 'patrol', 50, 'mechanic', 123, 123, 'back', 123, 2, 124124, 124124, 124124, 124124, 124124, 124124, '123124', '124123', '124123', 124124, 124124, 124124, 142124, '123124', 142, 124124, 142124, 124124, 1, 124124, 124);
 
 -- --------------------------------------------------------
 
@@ -191,7 +199,8 @@ CREATE TABLE `car_mark` (
 
 INSERT INTO `car_mark` (`id`, `name`, `icon`) VALUES
 (1, 'Lada', '/content/mark/lada.png'),
-(2, 'Kia', '/content/mark/kia.png');
+(2, 'Kia', '/content/mark/kia.png'),
+(3, 'Nissan', '/content/mark/nissan.png');
 
 -- --------------------------------------------------------
 
@@ -218,7 +227,9 @@ INSERT INTO `car_model` (`id`, `mark_id`, `name`, `image`) VALUES
 (5, 2, 'Rio', '/content/model/rio.png'),
 (6, 2, 'Rio New', '/content/model/rio_new.png'),
 (7, 2, 'Rio X', '/content/model/rio_x.png'),
-(8, 2, 'Rio X-Line', '/content/model/rio_x_line.png');
+(8, 2, 'Rio X-Line', '/content/model/rio_x_line.png'),
+(9, 1, 'Granta', '/content/model/granta_1.png'),
+(10, 3, 'X-Trail New', '/content/model/x-trail new.png');
 
 -- --------------------------------------------------------
 
@@ -241,10 +252,17 @@ CREATE TABLE `car_view` (
 
 CREATE TABLE `review` (
   `id` int(11) NOT NULL,
-  `account_id` int(11) NOT NULL,
-  `photo` varchar(255) NOT NULL,
-  `text` text NOT NULL
+  `name` varchar(240) NOT NULL,
+  `text` text NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `review`
+--
+
+INSERT INTO `review` (`id`, `name`, `text`, `date`) VALUES
+(1, 'asdasd', 'asdasd', '2021-04-19 10:48:15');
 
 --
 -- Индексы сохранённых таблиц
@@ -312,8 +330,7 @@ ALTER TABLE `car_view`
 -- Индексы таблицы `review`
 --
 ALTER TABLE `review`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `account_id` (`account_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -329,13 +346,13 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT для таблицы `account_session`
 --
 ALTER TABLE `account_session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `car`
 --
 ALTER TABLE `car`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `car_country_origin`
@@ -347,7 +364,7 @@ ALTER TABLE `car_country_origin`
 -- AUTO_INCREMENT для таблицы `car_equipment`
 --
 ALTER TABLE `car_equipment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `car_fuel_grade`
@@ -359,13 +376,13 @@ ALTER TABLE `car_fuel_grade`
 -- AUTO_INCREMENT для таблицы `car_mark`
 --
 ALTER TABLE `car_mark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `car_model`
 --
 ALTER TABLE `car_model`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `car_view`
@@ -377,7 +394,7 @@ ALTER TABLE `car_view`
 -- AUTO_INCREMENT для таблицы `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -396,12 +413,6 @@ ALTER TABLE `car`
 --
 ALTER TABLE `car_view`
   ADD CONSTRAINT `car_view_ibfk_1` FOREIGN KEY (`car_id`) REFERENCES `car` (`id`);
-
---
--- Ограничения внешнего ключа таблицы `review`
---
-ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
