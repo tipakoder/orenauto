@@ -28,6 +28,10 @@
                    <button>Отправить заявку</button>
                </form>
            </div>
+
+           <div class="block view-car">
+               <img src="/view/res/img/no-auto.png" alt="">
+           </div>
        </div>
    </div>
 </section>

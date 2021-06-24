@@ -1,4 +1,4 @@
-#constructor-car > .content{
+#constructor-car .content{
     display: flex;
     grid-gap: 16px;
     margin: 0 auto;
@@ -9,4 +9,10 @@
     border-radius: 16px;
     background-color: #fff;
     box-shadow: 0px 4px 18px rgba(0,0,0,0.16);
+}
+
+#constructor-car .view-car{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
