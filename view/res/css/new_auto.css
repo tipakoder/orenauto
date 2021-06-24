@@ -2,7 +2,6 @@
 
 #brands .list{
     display: grid;
-    align-items: center;
     justify-content: center;
     grid-template-columns: 32% 32% 32%;
     grid-gap: 20px;

@@ -1,7 +1,9 @@
 <?php
 
 function home_page(){
-    load_view("home_page", "Главная");
+    $marks = dbQuery("SELECT * FROM car_mark");
+    $reviews = dbQuery("SELECT * FROM review ORDER BY id DESC LIMIT 4");
+    load_view("home_page", "Главная", ["MARKS" => $marks, "REVIEWS" => $reviews]);
 }
 
 function catalog_page(){

@@ -145,7 +145,7 @@ section .section-title{
 
 /* MAIN */
 main{
-    min-height: calc(100% - 300px);
+    min-height: calc(100vh - 475px);
 }
 
 /* FOOTER */
