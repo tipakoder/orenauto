@@ -1,6 +1,6 @@
 <?php
 
-$currentUrl = array_shift(explode("?", $_SERVER["REQUEST_URI"]));
+$currentUrl = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 $currentMethod = strtolower($_SERVER["REQUEST_METHOD"]);
 $routesList = load_config("routesList");
 

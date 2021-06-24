@@ -1,10 +1,10 @@
 <?php
 
 function load_config($name){
-    $path = ROOTDIR."/config/{$name}.php";
+    $path = ROOTDIR."/config/{$name}.json";
 
     if(file_exists($path)){
-        return require_once $path;
+        return json_decode(file_get_contents($path), true);
     }
     return false;
 }
@@ -57,4 +57,5 @@ function send_answer($data = [], $type = false){
 
 function load_error($code, $more = null){
     load_view("", "Ошибка {$code}", ["code" => $code, "more" => $more], "error");
+    exit;
 }

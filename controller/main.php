@@ -18,6 +18,14 @@ function probeg_page(){
     load_view("probeg", "Авто с пробегом");
 }
 
+function credit_page(){
+    load_view("credit", "Автокредит");
+}
+
+function tradein_page(){
+    load_view("tradein", "Trade-in");
+}
+
 function reviews_page(){
     $reviews = dbQuery("SELECT * FROM review");
     load_view("reviews", "Отзывы", ["REVIEWS" => $reviews]);

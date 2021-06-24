@@ -4,7 +4,9 @@ $config_db = load_config("db");
 $link = null;
 
 try{
-    $link = mysqli_connect($config_db["host"], $config_db["user"], $config_db["password"], $config_db["name"]);
+    if(!($link = mysqli_connect($config_db["host"], $config_db["user"], $config_db["password"], $config_db["name"]))){
+        load_error(418, "Не удалось подключится к базе данных");
+    }
 }catch(\Exception $e){
     exit($e->getMessage());
 }

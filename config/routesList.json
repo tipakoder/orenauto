@@ -1,0 +1,120 @@
+[
+    {
+        "url": "/",
+        "method": "get",
+        "controller": "main",
+        "function": "home_page"
+    },
+
+    {
+        "url": "/catalog/",
+        "method": "get",
+        "controller": "main",
+        "function": "catalog_page"
+    },
+
+    {
+        "url": "/credit/",
+        "method": "get",
+        "controller": "main",
+        "function": "credit_page"
+    },
+
+    {
+        "url": "/tradein/",
+        "method": "get",
+        "controller": "main",
+        "function": "tradein_page"
+    },
+
+    {
+        "url": "/probeg/",
+        "method": "get",
+        "controller": "main",
+        "function": "probeg_page"
+    },
+
+    {
+        "url": "/reviews/",
+        "method": "get",
+        "controller": "main",
+        "function": "reviews_page"
+    },
+    
+    {
+        "url": "/contacts/",
+        "method": "get",
+        "controller": "main",
+        "function": "contacts_page"
+    },
+    
+    {
+        "url": "/admin/auth/",
+        "method": "get",
+        "controller": "admin",
+        "function": "auth_page"
+    },
+    
+    {
+        "url": "/admin/auth/process/",
+        "method": "post",
+        "controller": "admin",
+        "function": "auth_process"
+    },
+    
+    {
+        "url": "/admin/",
+        "method": "get",
+        "controller": "admin",
+        "function": "dashboard_page",
+        "level_access": 1
+    },
+    
+    {
+        "url": "/admin/catalog/",
+        "method": "get",
+        "controller": "admin",
+        "function": "catalog_page",
+        "level_access": 1
+    },
+    
+    {
+        "url": "/admin/catalog/add/",
+        "method": "post",
+        "controller": "admin",
+        "function": "catalog_add",
+        "level_access": 1
+    },
+    
+    {
+        "url": "/admin/catalog/update/",
+        "method": "post",
+        "controller": "admin",
+        "function": "catalog_update",
+        "level_access": 1
+    },
+    
+    {
+        "url": "/admin/mark/add/",
+        "method": "post",
+        "controller": "admin",
+        "function": "mark_add",
+        "level_access": 1
+    },
+    
+    {
+        "url": "/admin/model/add/",
+        "method": "post",
+        "controller": "admin",
+        "function": "model_add",
+        "level_access": 1
+    },
+    
+    {
+        "url": "/reviews/add/",
+        "method": "post",
+        "controller": "main",
+        "function": "reviews_add",
+        "level_access": 2
+    }
+]
